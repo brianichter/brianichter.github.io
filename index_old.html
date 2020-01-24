@@ -1,0 +1,495 @@
+<!DOCTYPE HTML>
+<!--
+	Photon by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+	TODO: 
+	add professional picture (to the side of my name in circle (see read only/strata))
+	Add pictures to about me
+-->
+<html>
+	<head>
+		<title>Brian Ichter</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+	<style>
+		html, body {
+			height: 100%;
+		}
+
+		img.full {
+			height: auto;
+			width: 100%;
+		}
+
+		img.half {
+			height: auto;
+			width: 50%;
+		}
+
+		img.quarter {
+			height: auto;
+			width: 25%;
+		}
+	</style>
+
+		<!-- Header -->
+			<section id="header">
+				<div class="inner">
+					<h1><strong>Brian Ichter</strong><br /></h1>
+					<h3><a href="mailto:ichter@google.com">ichter@google.com</a><br />
+					<a href="https://github.com/brianichter" class="icon fa-github"><span class="label">Github</span></a>
+					<span style="display:inline-block; width: 0.03in;"></span>
+					<a href="https://www.linkedin.com/in/brian-ichter-26875978?trk=nav_responsive_tab_profile_pic" class="icon fa-linkedin"><span class="label">Linked In</span></a>
+					<span style="display:inline-block; width: 0.03in;"></span>
+					<a href="https://scholar.google.com/citations?user=-w5DuHgAAAAJ&hl=en" ><span class="label">Google Scholar</span></a></h3>
+					<p>Research Scientist<br />
+					<a href="https://research.google/teams/brain/robotics/">Google Brain Robotics</a> <br />
+					<a href="https://github.com/stanfordasl" class="icon fa-github"><span class="label">Github</span></a>
+					</p>
+					<p style="text-align:justify">I am Research Scientist at Google Brain working in robotics. Generally, my interests lie in enabling the operation of robotic systems in the real world through fast, robust algorithms and machine learning. My PhD research, as a member of the Autonomous Systems Lab, focuses on motion planning, particularly sampling-based approaches. This work ranges over theoretical analysis, massively-parallel (GPU) algorithm development, uncertainty- and perception-aware planning, deep learning-based algorithm accelerations, and quadrotor experimental validation. See much more about me below.</p>
+					<ul class="actions vertical" >
+						<li><a href="#education" class="button scrolly fit">Education</a></li>
+						<li><a href="#motionplanning" class="button scrolly fit">Motion Planning</a></li>
+						<li><a href="#other" class="button scrolly fit">Other Projects</a></li>
+						<li><a href="#aboutme" class="button scrolly fit">About Me</a></li>
+					</ul>
+				</div>
+			</section>
+
+		<!-- Education -->
+			<section id="education" class="main style1">
+				<div class="container">
+					<header class="major">
+						<h2>Education</h2>
+					</header>
+					<ul>
+						<li>PhD Candidate, Aeronautics and Astronautics, Stanford University, 2014-2018</li>
+						<li>MS, Aeronautics and Astronautics, Stanford University, 2015</li>
+						<li>BS, Aerospace Engineering, University of Virginia, 2012</li>
+						<li>BA, Physics, University of Virginia, 2012</li>
+						<li>Thomas Jefferson High School For Science and Technology, 2008</li>
+					</ul>
+					<!-- <ul class="actions uniform">
+						<li><a href="http://stanford.edu/~ichter/IchterCV.pdf" class="button">CV</a></li>
+					</ul> -->
+				</div>
+			</section>
+
+		<!-- Motion Planning -->
+			<section id="motionplanning" class="main style1">
+				<div class="container">
+					<header class="major">
+						<h2>Motion Planning</h2>
+					</header>
+					<p style="text-align:justify">I am a PhD Candidate in the Stanford University Autonomous Systems Lab (ASL), advised by Professor <a href="http://web.stanford.edu/~pavone/">Marco Pavone</a>. My research within the ASL focuses on algorithm design for robotic motion planning. Specifically I'm working on sampling-based motion planning algorithms by (1) designing new parallel planning algorithms, capable of leveraging the many cores of GPUs, (2) developing algorithms for planning robust (uncertainty-aware and perception-aware) trajectories, (3) showing theoretical and practical benefits of low-dispersion sampling strategies, and (4) developing methodologies to leveraging learning in the planning process. My most up to date list of publications can be found on <a href="https://scholar.google.com/citations?user=-w5DuHgAAAAJ&hl=en">my Google Scholar page</a>, but many are listed below.
+					</p>
+					<div class="row 150%">
+						<div class="12u 12u$(medium)">
+							<h4>Planning in Learned Latent Spaces</h4>
+							<p style="text-align:justify"> My most recent work presented Latent Sampling-based Motion Planning (L-SBMP), a methodology towards computing motion plans for complex robotic systems by learning a plannable latent representation. Recent works in control of robotic systems have effectively leveraged local, low-dimensional embeddings of high-dimensional dynamics. Combining these recent advances with techniques from sampling-based motion planning (SBMP), we designed a methodology capable of planning for high-dimensional robotic systems beyond the reach of traditional approaches (e.g., humanoids, or even systems where planning occurs in the visual space). Specifically, the method constructs a learned latent space through an autoencoding network, a dynamics network, and a collision checking network, which mirror the three main algorithmic primitives of SBMP, namely state sampling, local steering, and collision checking. Notably, these networks can be trained through only raw data of the system's states and actions along with a supervising collision checker. Building upon these networks, an RRT-based algorithm can be used to plan motions directly in the latent space. This algorithm globally explores the latent space and is capable of generalizing to new environments.
+							</p>
+							<span class="image fit"><img class="full" src="images/lsbmp.png" alt="" /></span>
+							<p style="text-align:justify"></p>
+							<li> <b>Ichter</b>, Pavone, "<a href="https://arxiv.org/pdf/1807.10366.pdf">Robot Motion Planning in Learned Latent Spaces</a>,” IEEE Robotics and Automation Letters and IEEE Conf. on Robotics and Automation, 2019 (submitted) (also to appear at Infer to Control: Workshop on Probabilistic Reinforcement Learning and Structured Control at NIPS 2018.).</li>
+							<li><a href="https://github.com/StanfordASL/lsbmp">Learned Sampling-based Motion Planning Github Repo</a> <a href="https://github.com/stanfordasl/lsbmp" class="icon fa-github"><span class="label">Github</span></a></li>
+							<p style="text-align:justify"></p>
+
+
+							<h3>Sampling Strategies for Motion Planning</h3>
+							<h4>Learning Sampling Distributions</h4>
+							<span class="image right"><img  class="half" src="images/learnedTree.png" alt="" /></span>
+							<p style="text-align:justify">Sampling strategies for motion planning consist of the sampling source (random or deterministic; addressed in the above papers) and the sampling distribution (how the samples from the source are mapped into the state space). In practice, the impact of the sampling distribution often far outweighs the sampling source. Traditionally, the sampling distribution is uniform over the entire state space. In reality, the motion of many robotic systems is restricted to “small” regions of the state space. We proposed the use of techniques from deep learning to learn sampling distributions through demonstration. The sampling distribution is computed through a conditional variational autoencoder, allowing sample generation from the latent space conditioned on the specific planning problem. This approach has shown an order of magnitude improvement in terms of success rate and convergence to the optimal cost, while maintaining the theoretical guarantees of sampling-based approaches. </p>
+							<li> <b>Ichter*</b>, Harrison*, Pavone, "<a href="https://arxiv.org/pdf/1709.05448.pdf">Learning Sampling Distributions for Robot Motion Planning</a>,” IEEE International Conference on Robotics and Automation, 2018.</li>
+							<li><a href="https://github.com/StanfordASL/LearnedSamplingDistributions">Learned Sampling Distributions Github Repo</a> <a href="https://github.com/stanfordasl/LearnedSamplingDistributions" class="icon fa-github"><span class="label">Github</span></a></li>
+							<p style="text-align:justify"></p>
+
+							<h4>Low-Dispersion, Deterministic Sampling</h4>
+							<p style="text-align:justify">Traditionally, sampling-based motion planning algorithms have used i.i.d. random sampling to probe the configuration space. While this strategy is simple to implement and robust to obstacle/sample alignment issues, in many cases it is far from the best sampling choice. Instead, I have investigated low-dispersion sampling techniques, both deterministic and random, to show how algorithmic performance can be improved and what new and improved theoretical guarantees can be made (e.g., lower algorithmic complexity and guaranteed convergence rates). </p>
+							<span class="image fit"><img  class="full" src="images/sampling.png" alt="" /></span>
+							<p style="text-align:justify"></p>
+							<li> Janson, <b>Ichter</b>, Pavone, "<a href="http://asl.stanford.edu/wp-content/papercite-data/pdf/Janson.Ichter.Pavone.IJRR15.pdf">Deterministic Sampling-Based Motion Planning: Optimality, Complexity, and Performance</a>,” International Journal of Robotics Research, 2017.</li>
+							<li> Janson, <b>Ichter</b>, Pavone, "<a href="http://arxiv.org/abs/1505.00023">Deterministic Sampling-Based Motion Planning: Optimality, Complexity, and Performance</a>,” International Symposium on Robotics Research, 2015.</li>
+							<li><a href="https://github.com/StanfordASL/Janson.Ichter.Pavone.IJRR15">Deterministic Sampling Github Repo</a> <a href="https://github.com/StanfordASL/Janson.Ichter.Pavone.IJRR15" class="icon fa-github"><span class="label">Github</span></a></li>
+							<p style="text-align:justify"></p>
+
+							<h3>Parallel Motion Planning</h3>
+							<h4>Group Marching Trees</h4>
+							<p style="text-align:justify">To enable real-time motion planning, I am investigating algorithms for massive parallelization of sampling-based techniques. In particular, we proposed the Group Marching Tree (GMT*) algorithm. GMT* uses "lazy", approximate dynamic programming to explore the state space and grow a tree of near-optimal motion plans (optimal within a proven bound). It does this through expanding, in parallel, the group of all active samples with cost below an increasing threshold, rather than only the minimum cost sample. This group approximation enables low-level parallelism over the sample set and removes the need for sequential data structures, while the “lazy” collision checking limits thread divergence— all contributing to a very efficient GPU implementation. The resulting algorithm can solve planning problems (include those with differential constraints) on the order of 10ms, even on an embedded GPU, and generally one to two orders of magnitude faster than its CPU counterpart.</p>
+							<span class="image fit"><img  class="full" src="images/gmt.png" alt="" /></span>
+							<li> <b>Ichter</b>, Schmerling, Pavone, “<a href="https://arxiv.org/pdf/1705.02403.pdf">Group marching tree: sampling-based approximately optimal motion planning on GPUs</a>,” IEEE International Conference on Robotic Computing, 2017. </li>
+							<li><a href="https://github.com/StanfordASL/GMT">GMT* Github Repo</a> <a href="https://github.com/stanfordasl/GMT" class="icon fa-github"><span class="label">Github</span></a></li>
+							<p></p>
+
+							<h4>Parallel Kinodynamic, Uncertainty-Aware and Perception-aware Motion Planning</h4>
+							<span class="image right"><img class="half"  src="images/quadPUMP.png" alt="" /></span>
+							<p style="text-align:justify">
+							In order for robotic systems to begin operation in the field, they must not only plan quickly, but in a manner robust to uncertainty. I am thus working on parallel algorithms for dynamic, robust, real time motion planning. In particular, I am investigating sampling-based approaches to kinodynamic, uncertainty- and perception-aware motion planning. In these problems we seek low-cost motion plans, subject to a constraint on robustness. For uncertainty-aware planning this robustness constraint takes the form of a collision probability constraint and for perception-aware planning it is a localization-error constraint. The proposed algorithms then search the state space using a multiobjective search, considering both cost and an approximation to robustness (an approximate collision probability and a learned perception heuristic, respective to each problem), to identify many candidate motion plans. These candidate motion plans can then be certified "robust" through Monte Carlo methods. The additional computational burden of uncertainty- and perception-aware planning is offset by GPU massive parallelization using similar techniques to GMT*, resulting in algorithm runtimes order 100ms. The perception-aware planning work was verified on a quadrotor platform localized via a Google Tango smartphone, as can be seen in this <a href="https://www.youtube.com/watch?v=YKXf4iuj8-k">video</a>. </p>
+							<span class="image right"><img class="half"  src="images/quadMPAP.jpeg" alt="" /></span>
+
+							<p></p>
+							<li> <b>Ichter</b>, Schmerling, Pavone, "<a href="https://arxiv.org/pdf/1607.06886.pdf">Real-time stochastic kinodynamic motion planning via multiobjective search on GPUs</a>,” IEEE International Conference on Robotics and Automation, 2017. </li>
+							<li> <b>Ichter</b>, Landry, Schmerling, Pavone, “<a href="https://arxiv.org/pdf/1705.02408.pdf">Perception-Aware Motion Planning via Multiobjective Search on GPUs</a>,” International Symposium on Robotics Research, 2017. </li>
+							<li><a href="https://github.com/StanfordASL/PUMP">Parallel Uncertainty-aware Multiobjective Planning Github Repo</a> <a href="https://github.com/stanfordasl/PUMP" class="icon fa-github"><span class="label">Github</span></a></li>
+							<p></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Other Research and Projects -->
+			<section id="other" class="main style1">
+				<div class="container">
+					<header class="major">
+						<h2>Other Research and Projects </h2>
+					</header>
+					<div class="row 150%">
+						<div class="12u 12u$(medium)">
+							<h3>SUMR/MoDaR and SUPAR</h3>
+							
+							<p style="text-align:justify"> As an undergraduate student at the University of Virginia, and later research scientist, I worked with Professor <a href="http://www.mae.virginia.edu/NewMAE/mae-faculty/eric-loth/">Eric Loth</a> on two extreme scale wind turbine concepts. The concepts, Morphing Downwind Aligned-Rotor (MoDaR, formerly SUMR) and Segmented Ultralight Pre-aligned Rotor (SUPAR), were biologically inspired by palm trees in high wind to reduce mass of wind turbines by using a downwind rotor with blades whose elements are aligned more closely with the natural forces along the blade (i.e. low moment). More detail on the concepts can be found in the <a href="https://videopress.com/v/dC69fRlF">video</a>, the papers below, and articles in <a href="http://www.popsci.com/eric-loth-thinks-wind">Popular Science</a> and <a href="https://www.asme.org/engineering-topics/articles/energy/palm-trees-sway-wind-turbine-design">ASME</a> .
+
+							<p style="text-align:justify"> For my part in this work (primarily developing FEA models of the concept), I received awards for Best Undergraduate Presentation at the 2011 AIAA Young Professional, Student, and Education Conference and best paper in the FSI and adaptive structures technical session at the AIAA Fluid Dynamics Conference in June 2012. I also developed a 3D printed scale model that allowed for full rotation of the rotor and morphing blades. </p>
+							
+							<span class="image fit"><img class="full" src="images/modar.png" alt="" /></span>
+							
+							<li> Loth, Steele, Qin, <b>Ichter</b>, Selig, Moriarty, “Downwind Pre-Aligned Rotors for Extreme-Scale Wind Turbines,” Wind Energy, 2017. </li>
+							<li> <b>Ichter</b>, Steele, Loth, Moriarty, Selig, “A morphing downwind-aligned rotor concept based on a 100 meter blade wind turbine,” Wind Energy, May 2015. </li>
+							<li> <b>Ichter</b>, Steele, Loth, Moriarty, "<a href="http://arc.aiaa.org/doi/abs/10.2514/6.2012-3270">Structural Design and Analysis of a Segmented Ultralight Morphing Rotor (SUMR) for Extreme-Scale Wind Turbines</a>," AIAA Fluid Dynamics Conference, New Orleans, LA, AIAA-2012-3270, June 2012. </li>
+							<li> Loth, Steele, <b>Ichter</b>, Selig, Moriarty, "Downwind Pre-Aligned Rotors for Extreme-Scale Wind Turbines," Wind Energy, January 2016 (submitted). </li>
+							<li> Loth, <b>Ichter</b>, Steele, Selig, Moriarty, “Force-aligned downwind rotor concept for a 13MW wind turbine,” AIAA SciTech: ASME Wind Energy Symposium, Kissimmee, FL, January 2015. </li>
+							<li> Steele, <b>Ichter</b>, Qin, Loth, Selig, Moriarty, "<a href="http://arc.aiaa.org/doi/abs/10.2514/6.2013-914">Aerodynamics of an Ultralight Load-Aligned Rotor for Extreme-Scale Wind Turbines</a>," AIAA Aerospace Sciences Meeting, Dallas, TX, January 2013. </li>
+							<li> Loth, E., Steele, A., <b>Ichter</b>, B., Selig, M., and Moriarty, P., "<a href="http://m-selig.ae.illinois.edu/pubs/LothSteeleIchterSeligMoriarty-2012-AIAA-2012-1290.pdf">Segmented Ultralight Pre-Aligned Rotor for Extreme-Scale Wind Turbines</a>," AIAA Aerospace Sciences Meeting, Nashville, TN, AIAA-2012-1290, January 2012. </li>
+							<p style="text-align:justify"> </p>
+
+						<!--
+							<h3>AA241X: Team Pegasus</h3>
+							<p style="text-align:justify">The official website of Team Pegasus, a team for AA241X: Design, Construction, and Testing of Autonomous Aircraft can be found <a href="http://stanford.edu/~ichter/aa241x/">here</a>. The course tasked our team of 8 with designing and flying, in 10 weeks, a UAV to autonomously perform a search and research mission.</p>
+							<h3>Wooden Sunglasses Prototyping</h3>
+							<p style="text-align:justify">I am currently working on several wood-based prototyping projects. For example, designing sunglasses out of wood using a laser cutter for the frame and lenses and a 3D printer for hinges. </p>
+							<div class="box alt">
+								<div class="row uniform 50%">
+									<div class="4u"><span class="image fit"><img src="images/3dmodar.jpg" alt="" /></span></div>
+									<div class="4u"><span class="image fit"><img src="images/aa241x.jpg" alt="" /></span></div> 
+									<div class="4u"><span class="image fit"><img src="images/woodsunglasses.jpg" alt="" /></span></div>
+								</div>
+							</div>
+						-->
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+		<!-- About Me -->
+			<section id="aboutme" class="main style2 ">
+				<div class="container">
+					<header class="major">
+						<h2>About Me</h2>
+					</header>
+					<p style="text-align:justify">
+					In addition to my interests in robotics I try to travel as often as possible and I enjoy the outdoors, playing sports, and watching movies. A map of most of my travels can be found <a href="https://www.google.com/maps/d/edit?mid=z9UIkUsLtzvY.kQ_e9W-PUtKE">here</a>. I love to play pretty much any sport, but I especially enjoy football, soccer, and frisbee. </p>
+					<div class="box alt">
+						<div class="row uniform 50%">
+							<div class="4u"><span class="image fit"><img class="quarter"  src="images/imChamps.jpg" alt="" /></span></div> <! football champs >
+							<div class="4u"><span class="image fit"><img class="quarter"  src="images/brian1.jpg" alt="" /></span></div> <! half dome >
+							<div class="4u"><span class="image fit"><img class="quarter"  src="images/patagonia2.jpg" alt="" /></span></div> <! patagonia >
+						</div>
+					</div>
+					<ul class="actions uniform" style="text-align:center">
+						<li><a href="mailto:ichter@stanford.edu" class="button">Email Me</a></li>
+						<li><a href="http://stanford.edu/~ichter/IchterCV.pdf" class="button">CV</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<!--
+
+			<section id="five" class="main style1">
+				<div class="container">
+					<header class="major special">
+						<h2>Elements</h2>
+					</header>
+
+					<section>
+						<h4>Text</h4>
+						<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+						This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+						This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+						<hr />
+						<header>
+							<h4>Heading with a Subtitle</h4>
+							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+						</header>
+						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
+						<header>
+							<h5>Heading with a Subtitle</h5>
+							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+						</header>
+						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
+						<hr />
+						<h2>Heading Level 2</h2>
+						<h3>Heading Level 3</h3>
+						<h4>Heading Level 4</h4>
+						<h5>Heading Level 5</h5>
+						<h6>Heading Level 6</h6>
+						<hr />
+						<h5>Blockquote</h5>
+						<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+						<h5>Preformatted</h5>
+						<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+print 'Iteration ' + i;
+deck.shuffle();
+i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+					</section>
+
+					<section>
+						<h4>Lists</h4>
+						<div class="row">
+							<div class="6u 12u$(medium)">
+								<h5>Unordered</h5>
+								<ul>
+									<li>Dolor pulvinar etiam.</li>
+									<li>Sagittis adipiscing.</li>
+									<li>Felis enim feugiat.</li>
+								</ul>
+								<h5>Alternate</h5>
+								<ul class="alt">
+									<li>Dolor pulvinar etiam.</li>
+									<li>Sagittis adipiscing.</li>
+									<li>Felis enim feugiat.</li>
+								</ul>
+							</div>
+							<div class="6u$ 12u$(medium)">
+								<h5>Ordered</h5>
+								<ol>
+									<li>Dolor pulvinar etiam.</li>
+									<li>Etiam vel felis viverra.</li>
+									<li>Felis enim feugiat.</li>
+									<li>Dolor pulvinar etiam.</li>
+									<li>Etiam vel felis lorem.</li>
+									<li>Felis enim et feugiat.</li>
+								</ol>
+								<h5>Icons</h5>
+								<ul class="icons">
+									<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<h5>Actions</h5>
+						<div class="row">
+							<div class="6u 12u$(medium)">
+								<ul class="actions">
+									<li><a href="#" class="button special">Default</a></li>
+									<li><a href="#" class="button">Default</a></li>
+								</ul>
+								<ul class="actions small">
+									<li><a href="#" class="button special small">Small</a></li>
+									<li><a href="#" class="button small">Small</a></li>
+								</ul>
+								<ul class="actions vertical">
+									<li><a href="#" class="button special">Default</a></li>
+									<li><a href="#" class="button">Default</a></li>
+								</ul>
+								<ul class="actions vertical small">
+									<li><a href="#" class="button special small">Small</a></li>
+									<li><a href="#" class="button small">Small</a></li>
+								</ul>
+							</div>
+							<div class="6u 12u$(medium)">
+								<ul class="actions vertical">
+									<li><a href="#" class="button special fit">Default</a></li>
+									<li><a href="#" class="button fit">Default</a></li>
+								</ul>
+								<ul class="actions vertical small">
+									<li><a href="#" class="button special small fit">Small</a></li>
+									<li><a href="#" class="button small fit">Small</a></li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h4>Table</h4>
+						<h5>Default</h5>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Description</th>
+										<th>Price</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Item One</td>
+										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>Item Two</td>
+										<td>Vis ac commodo adipiscing arcu aliquet.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>Item Three</td>
+										<td> Morbi faucibus arcu accumsan lorem.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>Item Four</td>
+										<td>Vitae integer tempus condimentum.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>Item Five</td>
+										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>29.99</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="2"></td>
+										<td>100.00</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+
+						<h5>Alternate</h5>
+						<div class="table-wrapper">
+							<table class="alt">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Description</th>
+										<th>Price</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Item One</td>
+										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>Item Two</td>
+										<td>Vis ac commodo adipiscing arcu aliquet.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>Item Three</td>
+										<td> Morbi faucibus arcu accumsan lorem.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>Item Four</td>
+										<td>Vitae integer tempus condimentum.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>Item Five</td>
+										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>29.99</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="2"></td>
+										<td>100.00</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</section>
+
+					<section>
+						<h4>Buttons</h4>
+						<ul class="actions">
+							<li><a href="#" class="button special">Special</a></li>
+							<li><a href="#" class="button">Default</a></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="#" class="button big">Big</a></li>
+							<li><a href="#" class="button">Default</a></li>
+							<li><a href="#" class="button small">Small</a></li>
+						</ul>
+						<ul class="actions fit">
+							<li><a href="#" class="button fit">Fit</a></li>
+							<li><a href="#" class="button special fit">Fit</a></li>
+							<li><a href="#" class="button fit">Fit</a></li>
+						</ul>
+						<ul class="actions fit small">
+							<li><a href="#" class="button special fit small">Fit + Small</a></li>
+							<li><a href="#" class="button fit small">Fit + Small</a></li>
+							<li><a href="#" class="button special fit small">Fit + Small</a></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="#" class="button special icon fa-download">Icon</a></li>
+							<li><a href="#" class="button icon fa-download">Icon</a></li>
+						</ul>
+						<ul class="actions">
+							<li><span class="button special disabled">Disabled</span></li>
+							<li><span class="button disabled">Disabled</span></li>
+						</ul>
+					</section>
+
+					<section>
+						<h4>Image</h4>
+						<h5>Fit</h5>
+						<div class="box alt">
+							<div class="row uniform 50%">
+								<div class="12u"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
+								<div class="4u"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+								<div class="4u"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+								<div class="4u"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
+								<div class="4u"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+								<div class="4u"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
+								<div class="4u"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+								<div class="4u"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
+								<div class="4u"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+								<div class="4u"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+							</div>
+						</div>
+						<h5>Left &amp; Right</h5>
+						<p><span class="image left"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu.</p>
+						<p><span class="image right"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis</p>
+					</section>
+
+				</div>
+			</section>
+		-->
+
+		<!-- Footer -->
+			<section id="footer">
+				<ul class="copyright">
+					<li>&copy; Brian Ichter</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
